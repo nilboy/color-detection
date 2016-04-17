@@ -22,7 +22,7 @@ directories:
 	@-mkdir -p $(program_OBJ_DIR)
 $(program_NAME): $(program_OBJS)
 	$(CC) -shared $(program_OBJS) -o $(program_NAME) $(CPPFLAGS) $(LDFLAGS)
-$(program_OBJ_DIR)/%.o: src/%.cc
+$(program_OBJ_DIR)/%.o: $(program_SRC_DIR)/%.cc
 	$(CC) -o $@ -c $< $(CPPFLAGS) $(LDFLAGS)
 clean:
 	@-rm $(program_NAME)
